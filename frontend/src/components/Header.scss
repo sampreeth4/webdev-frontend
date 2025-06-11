@@ -102,6 +102,17 @@
   z-index: 1000;
   animation: dropdownFadeIn 0.2s ease-out;
 }
+.dropdown-role-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dropdown-role-links .dropdown-link {
+  flex: 1;
+  text-align: center;
+}
+
 
 .dropdown-section {
   h4 {

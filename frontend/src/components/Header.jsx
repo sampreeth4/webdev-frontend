@@ -72,26 +72,23 @@ const Header = () => {
             {isAuthDropdownOpen && (
               <div className="auth-dropdown">
                 <div className="dropdown-section">
-                  <h4>For Doctors</h4>
-                  <a href="#" className="dropdown-link">
-                    Doctor Login
-                  </a>
-                  <a href="#" className="dropdown-link">
-                    Doctor Sign up
-                  </a>
+                  <h4>Doctor</h4>
+                  <div className="dropdown-role-links">
+                    <a href="#" className="dropdown-link">Login</a>
+                    <a href="#" className="dropdown-link">Signup</a>
+                  </div>
                 </div>
                 <div className="dropdown-divider"></div>
                 <div className="dropdown-section">
-                  <h4>For Patients</h4>
-                  <a href="#" className="dropdown-link">
-                    Patient Login
-                  </a>
-                  <a href="#" className="dropdown-link">
-                    Patient Sign up
-                  </a>
+                  <h4>Patient</h4>
+                  <div className="dropdown-role-links">
+                    <a href="#" className="dropdown-link">Login</a>
+                    <a href="#" className="dropdown-link">Signup</a>
+                  </div>
                 </div>
               </div>
             )}
+
           </div>
 
           <button className="mobile-menu-btn" onClick={toggleMenu}>
