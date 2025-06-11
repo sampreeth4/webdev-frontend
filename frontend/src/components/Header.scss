@@ -40,6 +40,13 @@
 .nav {
   display: flex;
   gap: 32px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: center;
+
 
   &-link {
     color: #6b7280;
@@ -70,39 +77,88 @@
 }
 
 .auth-section {
+  position: relative;
+}
+
+.auth-btn {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.patients-text {
-  color: #6b7280;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.login-link {
-  color: #2563eb;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background-color: #f0f9ff;
-  }
-}
-
-.signup-link {
+  gap: 8px;
   background: #2563eb;
   color: white;
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 500;
   transition: background-color 0.2s ease;
+  cursor: pointer;
+  border: none;
 
   &:hover {
     background: #1d4ed8;
+  }
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.auth-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  min-width: 200px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+.dropdown-section {
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+  }
+}
+
+.dropdown-link {
+  display: block;
+  padding: 8px 12px;
+  color: #6b7280;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+
+  &:hover {
+    background: #f3f4f6;
+    color: #2563eb;
+  }
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -130,11 +186,7 @@
     display: none;
   }
 
-  .auth-section {
-    gap: 12px;
-  }
-
-  .patients-text {
-    display: none;
+  .auth-dropdown {
+    right: -20px;
   }
 }
