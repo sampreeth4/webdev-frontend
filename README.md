@@ -11,7 +11,7 @@ sampreeth4-webdev-frontend/
     ├── src/
     │   ├── App.jsx               # Root component
     │   ├── App.scss              # Global styles
-    │   ├── index.css             # Base CSS (if any)
+    │   ├── index.css             # Base CSS
     │   ├── main.jsx              # Entry point
     │   ├── assets/               # General assets
     │   └── components/           # Reusable components
