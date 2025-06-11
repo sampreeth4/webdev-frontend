@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react"
 import "./Header.scss"
 
 const Header = () => {
+  const menuRef = useRef(null);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isAuthDropdownOpen, setIsAuthDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
@@ -27,6 +29,7 @@ const Header = () => {
     document.addEventListener("mousedown", handleClickOutside)
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
+      document.body.style.overflow = ""
     }
   }, [])
 
@@ -60,7 +63,7 @@ const Header = () => {
             </a>
           </nav>
 
-          <div className="auth-section" ref={dropdownRef}>
+                    <div className="auth-section" ref={dropdownRef}>
             <button className="auth-btn" onClick={toggleAuthDropdown}>
               Login / Sign up
               <span className={`dropdown-arrow ${isAuthDropdownOpen ? "open" : ""}`}>▼</span>
@@ -98,6 +101,76 @@ const Header = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="mobile-menu" ref={menuRef}>
+          <div className="mobile-menu-header">
+            <div className="logo">
+              <span className="logo-icon">🩺</span>
+              <span className="logo-text">ProVital</span>
+            </div>
+            <button className="close-menu-btn" onClick={toggleMenu}>
+              ✕
+            </button>
+          </div>
+
+          <div className="mobile-menu-content">
+            <div className="mobile-auth-section">
+              <div className="mobile-auth-group">
+                <h3>Doctor</h3>
+                <div className="mobile-auth-links">
+                  <a href="#" className="mobile-login-link">
+                    Login
+                  </a>
+                  <a href="#" className="mobile-signup-link">
+                    Sign up
+                  </a>
+                </div>
+              </div>
+
+              <div className="mobile-auth-group">
+                <h3>Patients</h3>
+                <div className="mobile-auth-links">
+                  <a href="#" className="mobile-login-link">
+                    Login
+                  </a>
+                  <a href="#" className="mobile-signup-link">
+                    Sign up
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="mobile-nav-links">
+              <a href="#" className="mobile-nav-link">
+                <span>Doctors</span>
+                <span className="arrow">→</span>
+              </a>
+              <a href="#" className="mobile-nav-link">
+                <span>List your practice</span>
+                <span className="arrow">→</span>
+              </a>
+              <a href="#" className="mobile-nav-link">
+                <span>For Employers</span>
+                <span className="arrow">→</span>
+              </a>
+              <a href="#" className="mobile-nav-link">
+                <span>Courses</span>
+                <span className="arrow">→</span>
+              </a>
+              <a href="#" className="mobile-nav-link">
+                <span>Books</span>
+                <span className="arrow">→</span>
+              </a>
+              <a href="#" className="mobile-nav-link">
+                <span>Speakers</span>
+                <span className="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

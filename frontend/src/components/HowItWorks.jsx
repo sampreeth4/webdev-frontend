@@ -21,6 +21,7 @@ const allCardData = [
     description:
       "Evidence supports the use of a whole food, plant-predominant diet to prevent, treat and reverse chronic illness.",
     image: "./src/components/images/nutrition.jpg",
+    emoji: "💙",
   },
   {
     id: "physical",
@@ -30,6 +31,7 @@ const allCardData = [
     description:
       "Regular physical activity is key to managing weight, improving mental health, and reducing risk of chronic disease.",
     image: "./src/components/images/women-blacktop.jpg",
+    emoji: "❤",
   },
   {
     id: "sleep",
@@ -38,6 +40,7 @@ const allCardData = [
     unit: "hours",
     description: "Consistent, quality sleep supports immune function and physical and mental restoration.",
     image: "./src/components/images/man-sleep.jpg",
+    emoji: "🌙",
   },
   {
     id: "stress",
@@ -46,6 +49,7 @@ const allCardData = [
     unit: "minutes",
     description: "Effective stress management techniques help reduce cortisol levels and improve overall well-being.",
     image: "./src/components/images/women-stand.jpg",
+    emoji: "💙",
   },
   {
     id: "social",
@@ -54,6 +58,7 @@ const allCardData = [
     unit: "friends",
     description: "Strong social connections are linked to better mental health and increased longevity.",
     image: "./src/components/images/men-smile.jpg",
+    emoji: "❤",
   },
   {
     id: "substance",
@@ -62,6 +67,7 @@ const allCardData = [
     unit: "drinks",
     description: "Avoiding harmful substances and moderating alcohol intake supports optimal health outcomes.",
     image: "./src/components/images/man-jog.jpg",
+    emoji: "⌛",
   },
 ]
 
@@ -93,7 +99,7 @@ const HowItWorks = () => {
           <p className="section-label">HOW IT WORKS</p>
           <div className="section-title-row">
             <h2 className="section-title">
-              <span className="highlight">Lifestyle as medicine</span>: The six pillars
+              <span className="highlight">Lifestyle as medicine:</span> The six pillars
             </h2>
             <div className="navigation-arrows">
               <button className="nav-arrow nav-arrow-left" onClick={prevSlide}>
@@ -125,7 +131,7 @@ const HowItWorks = () => {
                 <div className="card-image">
                   <img src={card.image || "/placeholder.svg"} alt={card.title} />
                   <div className="card-stat">
-                    <div className="stat-icon">❤️</div>
+                    <div className="stat-icon">{card.emoji}</div>
                     <div className="stat-value">
                       <span className="stat-number">{card.stat}</span>
                       <span className="stat-unit">{card.unit}</span>

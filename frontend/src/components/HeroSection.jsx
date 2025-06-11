@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./HeroSection.scss"
 
 const HeroSection = () => {
@@ -9,6 +9,21 @@ const HeroSection = () => {
     location: "",
     insurance: "",
   })
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Check if mobile view
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    checkIfMobile()
+    window.addEventListener("resize", checkIfMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile)
+    }
+  }, [])
 
   // Images for the carousel
   const leftColumnImages = [
@@ -16,7 +31,6 @@ const HeroSection = () => {
     "./src/components/images/column1/img2.jpg",
     "./src/components/images/column1/img3.jpg",
     "./src/components/images/column1/img4.jpg",
-    // "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&h=400&fit=crop",
   ]
 
   const rightColumnImages = [
@@ -24,7 +38,17 @@ const HeroSection = () => {
     "./src/components/images/column2/img2.jpg",
     "./src/components/images/column2/img3.jpg",
     "./src/components/images/column2/img4.jpg",
-    // "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=250&fit=crop",
+  ]
+
+  const carouselImages = [
+    "./src/components/images/column1/img1.jpg",
+    "./src/components/images/column1/img2.jpg",
+    "./src/components/images/column1/img3.jpg",
+    "./src/components/images/column1/img4.jpg",
+    "./src/components/images/column2/img1.jpg",
+    "./src/components/images/column2/img2.jpg",
+    "./src/components/images/column2/img3.jpg",
+    "./src/components/images/column2/img4.jpg",
   ]
 
   const handleInputChange = (field, value) => {
@@ -39,26 +63,28 @@ const HeroSection = () => {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          <div className="hero-images">
-            <div className="image-carousel">
-              <div className="carousel-column left-column">
-                {/* Duplicate images for seamless loop */}
-                {[...leftColumnImages, ...leftColumnImages].map((image, index) => (
-                  <div key={index} className="carousel-image">
-                    <img src={image || "/placeholder.svg"} alt={`Lifestyle ${index + 1}`} />
-                  </div>
-                ))}
-              </div>
-              <div className="carousel-column right-column">
-                {/* Duplicate images for seamless loop */}
-                {[...rightColumnImages, ...rightColumnImages].map((image, index) => (
-                  <div key={index} className="carousel-image">
-                    <img src={image || "/placeholder.svg"} alt={`Health ${index + 1}`} />
-                  </div>
-                ))}
+          {!isMobile && (
+            <div className="hero-images desktop-images">
+              <div className="image-carousel">
+                <div className="carousel-column left-column">
+                  {/* Duplicate images for seamless loop */}
+                  {[...leftColumnImages, ...leftColumnImages].map((image, index) => (
+                    <div key={`left-${index}`} className="carousel-image">
+                      <img src={image || "/placeholder.svg"} alt={`Lifestyle ${index + 1}`} />
+                    </div>
+                  ))}
+                </div>
+                <div className="carousel-column right-column">
+                  {/* Duplicate images for seamless loop */}
+                  {[...rightColumnImages, ...rightColumnImages].map((image, index) => (
+                    <div key={`right-${index}`} className="carousel-image">
+                      <img src={image || "/placeholder.svg"} alt={`Health ${index + 1}`} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <div className="hero-text">
             <h1 className="hero-title">
@@ -68,8 +94,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Search form overlaid on the entire hero section */}
-        <div className="search-overlay">
+        {/* Search form */}
+        <div className="search-container">
           <div className="search-form">
             <div className="search-field">
               <input
@@ -103,6 +129,19 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
+
+        {/* Mobile horizontal image carousel */}
+        {isMobile && (
+          <div className="mobile-carousel">
+            <div className="mobile-carousel-track">
+              {[...carouselImages, ...carouselImages].map((image, index) => (
+                <div key={`mobile-${index}`} className="mobile-carousel-item">
+                  <img src={image || "/placeholder.svg"} alt={`Lifestyle ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
