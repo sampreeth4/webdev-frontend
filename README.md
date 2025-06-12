@@ -47,13 +47,13 @@ sampreeth4-webdev-frontend/
 cd frontend
 ```
 
-### 1. Install dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Run the development server
+### 3. Run the development server
 
 ```bash
 npm run dev
@@ -61,19 +61,19 @@ npm run dev
 
 Open your browser and visit `http://localhost:5173`
 
-### 3. Build for production
+### 4. Build for production
 
 ```bash
 npm run build
 ```
 
-### 4. Preview the production build
+### 5. Preview the production build
 
 ```bash
 npm run preview
 ```
 
-### 5. Run lint
+### 6. Run lint
 
 ```bash
 npm run lint
