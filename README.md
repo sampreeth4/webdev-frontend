@@ -41,6 +41,12 @@ sampreeth4-webdev-frontend/
 
 ## 🚀 Getting Started
 
+### 1. Go to the target directory
+
+```bash
+cd frontend
+```
+
 ### 1. Install dependencies
 
 ```bash
