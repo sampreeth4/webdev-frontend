@@ -27,28 +27,28 @@ const HeroSection = () => {
 
   // Images for the carousel
   const leftColumnImages = [
-    "./src/components/images/column1/img1.jpg",
-    "./src/components/images/column1/img2.jpg",
-    "./src/components/images/column1/img3.jpg",
-    "./src/components/images/column1/img4.jpg",
+    "./images/column1/img1.jpg",
+    "./images/column1/img2.jpg",
+    "./images/column1/img3.jpg",
+    "./images/column1/img4.jpg",
   ]
 
   const rightColumnImages = [
-    "./src/components/images/column2/img1.jpg",
-    "./src/components/images/column2/img2.jpg",
-    "./src/components/images/column2/img3.jpg",
-    "./src/components/images/column2/img4.jpg",
+    "./images/column2/img1.jpg",
+    "./images/column2/img2.jpg",
+    "./images/column2/img3.jpg",
+    "./images/column2/img4.jpg",
   ]
 
   const carouselImages = [
-    "./src/components/images/column1/img1.jpg",
-    "./src/components/images/column1/img2.jpg",
-    "./src/components/images/column1/img3.jpg",
-    "./src/components/images/column1/img4.jpg",
-    "./src/components/images/column2/img1.jpg",
-    "./src/components/images/column2/img2.jpg",
-    "./src/components/images/column2/img3.jpg",
-    "./src/components/images/column2/img4.jpg",
+    "./images/column1/img1.jpg",
+    "./images/column1/img2.jpg",
+    "./images/column1/img3.jpg",
+    "./images/column1/img4.jpg",
+    "./images/column2/img1.jpg",
+    "./images/column2/img2.jpg",
+    "./images/column2/img3.jpg",
+    "./images/column2/img4.jpg",
   ]
 
   const handleInputChange = (field, value) => {

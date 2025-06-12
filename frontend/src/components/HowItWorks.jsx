@@ -20,7 +20,7 @@ const allCardData = [
     unit: "mmHg",
     description:
       "Evidence supports the use of a whole food, plant-predominant diet to prevent, treat and reverse chronic illness.",
-    image: "./src/components/images/nutrition.jpg",
+    image: "./images/nutrition.jpg",
     emoji: "💙",
   },
   {
@@ -30,7 +30,7 @@ const allCardData = [
     unit: "minutes",
     description:
       "Regular physical activity is key to managing weight, improving mental health, and reducing risk of chronic disease.",
-    image: "./src/components/images/women-blacktop.jpg",
+    image: "./images/women-blacktop.jpg",
     emoji: "❤",
   },
   {
@@ -39,7 +39,7 @@ const allCardData = [
     stat: "8",
     unit: "hours",
     description: "Consistent, quality sleep supports immune function and physical and mental restoration.",
-    image: "./src/components/images/man-sleep.jpg",
+    image: "./images/man-sleep.jpg",
     emoji: "🌙",
   },
   {
@@ -48,7 +48,7 @@ const allCardData = [
     stat: "15",
     unit: "minutes",
     description: "Effective stress management techniques help reduce cortisol levels and improve overall well-being.",
-    image: "./src/components/images/women-stand.jpg",
+    image: "./images/women-stand.jpg",
     emoji: "💙",
   },
   {
@@ -57,7 +57,7 @@ const allCardData = [
     stat: "5",
     unit: "friends",
     description: "Strong social connections are linked to better mental health and increased longevity.",
-    image: "./src/components/images/men-smile.jpg",
+    image: "./images/men-smile.jpg",
     emoji: "❤",
   },
   {
@@ -66,7 +66,7 @@ const allCardData = [
     stat: "0",
     unit: "drinks",
     description: "Avoiding harmful substances and moderating alcohol intake supports optimal health outcomes.",
-    image: "./src/components/images/man-jog.jpg",
+    image: "./images/man-jog.jpg",
     emoji: "⌛",
   },
 ]
